@@ -6,8 +6,9 @@ using UnityEngine.UI;
 
 public class Counter : MonoBehaviour
 {
+    public int scoreMultiplier;
     public Text CounterText;
-    private int Count = 0;
+    private static int Count = 0;
 
     private void Start()
     {
@@ -16,7 +17,7 @@ public class Counter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Count += 1;
+        Count += 1 * scoreMultiplier;
         CounterText.text = "Count : " + Count;
     }
 }
